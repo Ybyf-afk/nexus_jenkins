@@ -1,0 +1,8 @@
+git
+matrix-auth
+pipeline maven integration
+maven-plugin
+blueocean
+job-dsl
+nexus-jenkins-plugin
+

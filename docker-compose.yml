@@ -1,0 +1,49 @@
+version: '3'
+
+networks:
+  cicdnetwork:
+    driver: bridge
+
+volumes:
+  nexus-data:
+  jenkins-data:
+
+services:
+  nexus:
+    image: nexus:new_user
+# build: ./nexus3
+    restart: always
+    ports:
+      - "8081:8081"
+    networks:
+      - cicdnetwork
+    volumes:
+      - nexus-data:/nexus-data
+    environment:
+      - NEXUS_PORT=8081
+  
+  jenkins:
+    build: ./jenkins
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - cicdnetwork
+  ldap:
+    build: ./ldap
+    restart: always
+    ports:
+      - "389:389"
+      - "636:636"
+    networks:
+      - cicdnetwork
+    
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#      - /usr/bin/docker:/usr/bin/docker
+#      - jenkins-data:/var/lib/jenkins/
+#    depends_on:
+#      - nexus
+
+    
+
