@@ -37,6 +37,17 @@ services:
       - "636:636"
     networks:
       - cicdnetwork
+    environment:
+      - "DEBUG_LEVEL=1"
+      - "DOMAIN=example.com"
+      - "ORGANIZATION=example"
+      - "PASSWORD=1234567"
+      - "INIT_SCRIPT=/var/init/init.ldif"
+      - "CUSTOM_SCHEMAS=/var/schemas"
+      - "SCHEMAS=cosine inetorgperson nis samba"
+    volumes:
+      - "./init.ldif:/var/init/init.ldif"
+      - "./schemas:/var/schemas"
     
 #    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock
