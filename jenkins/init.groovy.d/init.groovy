@@ -8,6 +8,7 @@ import hudson.plugins.sshslaves.*;
 import hudson.model.*
 import jenkins.model.*
 import hudson.security.*
+import jenkins.security.ApiTokenProperty
 
 
 // SET SLAVE PORT AND NUMBER OF EXECUTORS AT MASTER NODE( im setting it to 5, you may declare it after you know you have enough RAM)
