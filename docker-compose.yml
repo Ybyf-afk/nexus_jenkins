@@ -10,8 +10,8 @@ volumes:
 
 services:
   nexus:
-    image: nexus:new_user
-# build: ./nexus3
+#image: nexus:new_user
+    build: ./nexus3
     restart: always
     ports:
       - "8081:8081"

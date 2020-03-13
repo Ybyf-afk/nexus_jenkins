@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:lts
 
 # install jenkins plugins
 COPY ./jenkins-plugins /usr/share/jenkins/plugins

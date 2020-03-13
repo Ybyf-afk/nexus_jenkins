@@ -1,7 +1,9 @@
 git
 ldap
 matrix-auth
-pipeline maven integration
+pipeline-build-step 
+maven 
+integration
 maven-plugin
 blueocean
 job-dsl
